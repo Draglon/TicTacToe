@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './new-game.scss';
-import { NEW_GAME } from '../../store/constants/ticTacToe.constants';
+import { NEW_GAME } from '../../../store/constants/ticTacToe.constants';
 
 const NewGame = ({ startNewGame }) => (
   <div className="tictactoe__btns">

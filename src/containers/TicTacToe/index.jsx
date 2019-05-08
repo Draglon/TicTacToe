@@ -1,10 +1,10 @@
 import React from 'react';
 
 import './tictactoe.scss';
-import Nav from '../Nav';
-import Status from '../Status';
-import Area from '../Area';
-import NewGame from '../NewGame';
+import Nav from './Nav';
+import Status from './Status';
+import Area from './Area';
+import NewGame from './NewGame';
 
 const TicTacToe = () => (
   <div className="tictactoe">

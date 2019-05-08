@@ -5,10 +5,8 @@ import './area.scss';
 import {
   CURRENT_PLAYER,
   ARRAY_STEPS,
-} from '../../store/constants/ticTacToe.constants';
-import {
-  getTicTacToe,
-} from '../../store/selectors/ticTacToe';
+} from '../../../store/constants/ticTacToe.constants';
+import { getTicTacToe } from '../../../store/selectors/ticTacToe';
 
 class Area extends Component {
   setNewArea(index) {
