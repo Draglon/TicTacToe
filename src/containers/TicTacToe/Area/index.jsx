@@ -11,8 +11,7 @@ import { getTicTacToe } from '../../../store/selectors/ticTacToe';
 class Area extends Component {
   setNewArea(index) {
     const { setTicTacToe, ticTacToe } = this.props;
-    const obj = JSON.parse(JSON.stringify(ticTacToe));
-    const { arraySteps, currentPlayer } = obj;
+    const { arraySteps, currentPlayer } = JSON.parse(JSON.stringify(ticTacToe));
 
     if (!arraySteps[index]) {
       arraySteps[index] = currentPlayer === 1 ? 'x' : 'o';
@@ -29,7 +28,8 @@ class Area extends Component {
       <div className="area">
         {arraySteps.map((item, index) => (
           <div className="area__item" key={index} onClick={() => this.setNewArea(index)}>
-            {item}
+            {item === 'x' && <i className="icon-cross"/>}
+            {item === 'o' && <i className="icon-circle"/>}
           </div>
         ))}
       </div>

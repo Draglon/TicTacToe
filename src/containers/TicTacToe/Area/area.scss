@@ -9,7 +9,17 @@
   &__item {
     background-color: $gray-lighter;
     border: 1px solid $gray-light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 10em;
     height: 10em;
+
+    i {
+      font-size: $font-size36;
+
+      &.icon-cross {color: $blue;}
+      &.icon-circle {color: $red;}
+    }
   }
 }
