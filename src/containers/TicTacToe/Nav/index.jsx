@@ -12,11 +12,9 @@ class Nav extends Component {
     const { setTicTacToe } = this.props;
     const { currentPlayer, allSteps } = JSON.parse(JSON.stringify(this.props.ticTacToe));
 
-    const newStep = step < 0 ? 0 : step;
-
-    setTicTacToe(CURRENT_AREA, allSteps[newStep]);
+    setTicTacToe(CURRENT_AREA, allSteps[step]);
     setTicTacToe(CURRENT_PLAYER, currentPlayer === 1 ? 2 : 1);
-    setTicTacToe(CURRENT_STEP, newStep);
+    setTicTacToe(CURRENT_STEP, step);
   }
 
   render() {
