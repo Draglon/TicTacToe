@@ -2,26 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './status.scss';
+import { getTicTacToe } from '../../../store/selectors/ticTacToe';
 
-const Status = () => {
-  return (
-    <footer className="tictactoe__footer">
-      <div className="sets">Sets played: 5</div>
-      <div className="player player--first">Player 1 wins: 1</div>
-      <div className="player player--second">Player 2 wins: 4</div>
-    </footer>
-  );
-};
+const Status = ({ ticTacToe }) => (
+  <footer className="tictactoe__footer">
+    <div className="sets">Sets played: {ticTacToe.sets}</div>
+    <div className="player player--first">Player 1 wins: {ticTacToe.wins.player1}</div>
+    <div className="player player--second">Player 2 wins: {ticTacToe.wins.player2}</div>
+  </footer>
+);
 
 const mapStateToProps = state => ({
-
-});
-
-const mapDispatchToProps = dispatch => ({
-
+  ticTacToe: getTicTacToe(state),
 });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  null,
 )(Status);

@@ -2,7 +2,8 @@ import { combineReducers } from 'redux';
 import {
   CURRENT_PLAYER,
   CURRENT_STEP,
-  ARRAY_STEPS,
+  CURRENT_AREA,
+  ALL_STEPS,
   SETS,
   WINS,
   NEW_GAME,
@@ -12,7 +13,8 @@ import {
 const ticTacToeInitState = {
   currentPlayer: 1,
   currentStep: 0,
-  arraySteps: ['', '', '', '', '', '', '', '', ''],
+  currentArea: [...Array(9).keys()].map(() => ''),
+  allSteps: [],
   sets: 0,
   wins: {
     player1: 0,
@@ -33,10 +35,15 @@ const ticTacToeReducer = (state = ticTacToeInitState, action) => {
         ...state,
         currentStep: action.payload,
       };
-    case ARRAY_STEPS:
+    case CURRENT_AREA:
       return {
         ...state,
-        arraySteps: action.payload,
+        currentArea: action.payload,
+      };
+    case ALL_STEPS:
+      return {
+        ...state,
+        allSteps: action.payload,
       };
     case SETS:
       return {
