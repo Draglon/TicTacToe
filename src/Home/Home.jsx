@@ -2,21 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './Home.scss';
-import Header from './Header';
-import Footer from './Footer';
-import Area from './Area';
+import TicTacToe from './TicTacToe';
 
 const Home = () => {
   return (
     <section className="home">
       <div className="wrapper">
-        <div className="tictactoe">
-          <div className="tictactoe__content">
-            <Header />
-            <Area />
-            <Footer />
-          </div>
-        </div>
+        <TicTacToe />
       </div>
     </section>
   );
