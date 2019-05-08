@@ -6,7 +6,13 @@ import { NEW_GAME } from '../../../store/constants/ticTacToe.constants';
 
 const NewGame = ({ startNewGame }) => (
   <div className="tictactoe__btns">
-    <button className="btn btn-primary btn-reset" type="button" onClick={() => startNewGame(NEW_GAME)}>New Game</button>
+    <button
+      className="btn btn-primary btn-reset"
+      type="button"
+      onClick={() => startNewGame(NEW_GAME)}
+    >
+      New Game
+    </button>
   </div>
 );
 

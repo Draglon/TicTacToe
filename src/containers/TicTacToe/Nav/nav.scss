@@ -21,5 +21,7 @@
 }
 
 .step-forward {
+  display: flex;
+  flex-direction: row-reverse;
   i {margin-left: .5em;}
 }

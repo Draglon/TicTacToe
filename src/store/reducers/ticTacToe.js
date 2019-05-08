@@ -14,7 +14,7 @@ const ticTacToeInitState = {
   currentPlayer: 1,
   currentStep: 0,
   currentArea: [...Array(9).keys()].map(() => ''),
-  allSteps: [],
+  allSteps: [[...Array(9).keys()].map(() => '')],
   sets: 0,
   wins: {
     player1: 0,

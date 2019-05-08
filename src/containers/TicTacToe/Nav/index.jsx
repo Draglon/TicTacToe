@@ -12,16 +12,18 @@ class Nav extends Component {
     const { setTicTacToe } = this.props;
     const { currentPlayer, allSteps } = JSON.parse(JSON.stringify(this.props.ticTacToe));
 
-    setTicTacToe(CURRENT_AREA, allSteps[step]);
+    const newStep = step < 0 ? 0 : step;
+
+    setTicTacToe(CURRENT_AREA, allSteps[newStep]);
     setTicTacToe(CURRENT_PLAYER, currentPlayer === 1 ? 2 : 1);
-    setTicTacToe(CURRENT_STEP, step);
+    setTicTacToe(CURRENT_STEP, newStep);
   }
 
   render() {
     const { allSteps, currentStep } = this.props.ticTacToe;
 
     return (
-      <nav className="tictactoe__header">
+      <nav className="tictactoe__nav">
         <Button
           className="btn-step step-back"
           disabled={currentStep === 0}

@@ -11,13 +11,6 @@ import {
 import { getTicTacToe } from '../../../store/selectors/ticTacToe';
 
 class Area extends Component {
-  componentDidMount() {
-    const { setTicTacToe, ticTacToe } = this.props;
-    const { allSteps, currentStep, currentArea } = JSON.parse(JSON.stringify(ticTacToe));
-    allSteps[currentStep] = currentArea;
-    setTicTacToe(ALL_STEPS, allSteps);
-  }
-
   setNewArea(index) {
     const { setTicTacToe, ticTacToe } = this.props;
     const {
