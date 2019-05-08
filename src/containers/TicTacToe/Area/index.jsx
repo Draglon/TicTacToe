@@ -18,7 +18,6 @@ class Area extends Component {
       setTicTacToe(CURRENT_PLAYER, currentPlayer === 1 ? 2 : 1);
       setTicTacToe(ARRAY_STEPS, arraySteps);
     }
-    // (<i className="icon-cross"/>)
   }
 
   render() {
@@ -27,7 +26,7 @@ class Area extends Component {
     return (
       <div className="area">
         {arraySteps.map((item, index) => (
-          <div className="area__item" key={index} onClick={() => this.setNewArea(index)}>
+          <div className={`area__item${item && ' active'}`} key={index} onClick={() => this.setNewArea(index)}>
             {item === 'x' && <i className="icon-cross"/>}
             {item === 'o' && <i className="icon-circle"/>}
           </div>
