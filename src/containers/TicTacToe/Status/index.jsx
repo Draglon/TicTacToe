@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './footer.scss';
+import './status.scss';
 
-const Footer = () => {
+const Status = () => {
   return (
     <footer className="tictactoe__footer">
-      <div className="steps">Sets played: 5</div>
-      <div className="first-player">Player 1 wins: 1</div>
-      <div className="second-player">Player 2 wins: 4</div>
+      <div className="sets">Sets played: 5</div>
+      <div className="player player--first">Player 1 wins: 1</div>
+      <div className="player player--second">Player 2 wins: 4</div>
     </footer>
   );
 };
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Footer);
+)(Status);

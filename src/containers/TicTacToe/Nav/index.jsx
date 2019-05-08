@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './header.scss';
+import './nav.scss';
 
-const Header = () => {
+const Nav = () => {
   return (
     <header className="tictactoe__header">
-      <div className="btn-step step-back">
+      <button type="button" className="btn-step step-back" disabled>
         <i className="icon-arrow-left"/>
         Step Back
-      </div>
-      <div className="btn-step step-forward">
+      </button>
+      <button type="button" className="btn-step step-forward" disabled>
         Step Forward
         <i className="icon-arrow-right"/>
-      </div>
+      </button>
     </header>
   );
 };
@@ -29,4 +29,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Header);
+)(Nav);

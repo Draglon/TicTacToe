@@ -1,13 +1,13 @@
 @import '../../styles/variables/_variables';
 
-.steps {
+.sets {
   font-size: $font-size14;
 }
 
-.first-player {
+.player {
   font-size: $font-size14;
-}
 
-.second-player {
-  font-size: $font-size14;
+  &--first { }
+
+  &--second { }
 }
