@@ -29,7 +29,7 @@ class Area extends Component {
 
     if (!currentArea[index]) {
       currentArea[index] = currentPlayer === 1 ? 'x' : 'o';
-      allSteps[currentStep] = currentArea;
+      allSteps[currentStep + 1] = currentArea;
 
       setTicTacToe(CURRENT_PLAYER, currentPlayer === 1 ? 2 : 1);
       setTicTacToe(CURRENT_STEP, currentStep + 1);
