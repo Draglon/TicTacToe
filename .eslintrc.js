@@ -1,4 +1,5 @@
 module.exports = {
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "es6": true
@@ -6,6 +7,8 @@ module.exports = {
   "extends": [
     "eslint:recommended",
     "airbnb/base",
+    "plugin:import/errors", 
+    "plugin:import/warnings"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -13,7 +16,8 @@ module.exports = {
   },
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "modules": true
     },
     "ecmaVersion": 2018,
     "sourceType": "module"
@@ -32,5 +36,6 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": 0,
     "react/jsx-filename-extension": 0,
     "import/no-unresolved": 0,
+    "react/jsx-uses-vars": [2],
   }
 };

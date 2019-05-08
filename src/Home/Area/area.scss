@@ -1,0 +1,15 @@
+@import '../../styles/variables/_variables';
+
+.area {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 30em;
+
+  &__item {
+    background-color: $gray-lighter;
+    border: 1px solid $gray-light;
+    width: 10em;
+    height: 10em;
+  }
+}

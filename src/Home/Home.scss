@@ -1,3 +1,23 @@
-.home {
-  
+@import '../styles/variables/_variables';
+
+.tictactoe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3em 0;
+  }
+
+  &__footer {
+    background-color: $gray-lighter;
+    border: 1px solid $gray-light;
+    margin-top: 3em;
+    padding: 1.5em;
+    text-align: center;
+  }
 }

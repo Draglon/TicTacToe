@@ -1,0 +1,17 @@
+@import '../../styles/variables/_variables';
+
+.btn-step {
+  cursor: pointer;
+  font-size: $font-size18;
+  &:hover {
+    color: $gray-light;
+  }
+}
+
+.step-back {
+  i {margin-right: .5em;}
+}
+
+.step-forward {
+  i {margin-left: .5em;}
+}
