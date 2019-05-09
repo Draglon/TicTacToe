@@ -77,6 +77,7 @@ class Area extends Component {
           setTicTacToe(WINS, currentPlayer === 1
             ? { ...wins, player1: wins.player1 + 1 }
             : { ...wins, player2: wins.player2 + 1 });
+          alert("Player " + currentPlayer + " wins. Start a new set.");
           setTicTacToe(NEW_SET, null);
         }
         return null;
