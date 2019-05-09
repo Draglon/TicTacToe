@@ -6,15 +6,17 @@ import {
   ALL_STEPS,
   SETS,
   WINS,
+  NEW_SET,
   NEW_GAME,
 } from '../constants/ticTacToe.constants';
 
 // Tic Tac Toe - InitState
+const emptyArea = [...Array(9).keys()].map(() => '');
 const ticTacToeInitState = {
   currentPlayer: 1,
   currentStep: 0,
-  currentArea: [...Array(9).keys()].map(() => ''),
-  allSteps: [[...Array(9).keys()].map(() => '')],
+  currentArea: emptyArea,
+  allSteps: [emptyArea],
   sets: 0,
   wins: {
     player1: 0,
@@ -54,6 +56,14 @@ const ticTacToeReducer = (state = ticTacToeInitState, action) => {
       return {
         ...state,
         wins: action.payload,
+      };
+    case NEW_SET:
+      return {
+        ...state,
+        currentPlayer: 1,
+        currentStep: 0,
+        currentArea: emptyArea,
+        allSteps: [emptyArea],
       };
     case NEW_GAME:
       return ticTacToeInitState;
