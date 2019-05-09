@@ -24,10 +24,11 @@ class Area extends Component {
       currentArea[index] = currentPlayer === 1 ? 'x' : 'o';
       allSteps[currentStep + 1] = currentArea;
 
+      setTicTacToe(ALL_STEPS, allSteps.slice(0, currentStep + 2));
+
       setTicTacToe(CURRENT_PLAYER, currentPlayer === 1 ? 2 : 1);
       setTicTacToe(CURRENT_STEP, currentStep + 1);
       setTicTacToe(CURRENT_AREA, currentArea);
-      setTicTacToe(ALL_STEPS, allSteps);
     }
   }
 
