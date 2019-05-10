@@ -4,11 +4,7 @@ import { POPUP_TOGGLE, MENU_TOGGLE } from '../constants/ui.constants';
 const popupInitState = {
   title: '',
   message: '',
-  onConfirm: null,
   btnClose: true,
-  btnConfirm: true,
-  btnCloseText: '',
-  btnConfirmText: '',
   show: false,
 };
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import Popup from '../Popup';
 import * as components from './Components';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
 
     return (
       <main className="main page">
+        <Popup />
         <Content />
       </main>
     );

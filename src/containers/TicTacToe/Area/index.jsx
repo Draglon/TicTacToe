@@ -11,6 +11,7 @@ import {
   WINS,
   NEW_SET,
 } from '../../../store/constants/ticTacToe.constants';
+import { POPUP_TOGGLE } from '../../../store/constants/ui.constants';
 import { getTicTacToe } from '../../../store/selectors/ticTacToe';
 
 class Area extends Component {
@@ -41,7 +42,7 @@ class Area extends Component {
   }
 
   setNewArea(index) {
-    const { setTicTacToe, ticTacToe } = this.props;
+    const { setTicTacToe, ticTacToe, popupToggle } = this.props;
     const {
       currentPlayer,
       currentStep,
@@ -77,7 +78,18 @@ class Area extends Component {
           setTicTacToe(WINS, currentPlayer === 1
             ? { ...wins, player1: wins.player1 + 1 }
             : { ...wins, player2: wins.player2 + 1 });
-          alert("Player " + currentPlayer + " wins. Start a new set.");
+          popupToggle(
+            POPUP_TOGGLE,
+            {
+              title: 'Victory',
+              message: (
+                <>
+                  <p>Player <b>{currentPlayer}</b> wins.</p>
+                  <p>Start a new set.</p>
+                </>
+              ),
+            },
+          );
           setTicTacToe(NEW_SET, null);
         }
         return null;
@@ -107,6 +119,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   setTicTacToe(type, payload) {
+    dispatch({ type, payload });
+  },
+  popupToggle(type, payload) {
     dispatch({ type, payload });
   },
 });
