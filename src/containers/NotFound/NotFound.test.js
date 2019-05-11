@@ -1,9 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
+
 import NotFound from './index';
 
-it('renders without crashing', () => {
-  const section = document.createElement('section');
-  ReactDOM.render(<NotFound />, section);
-  ReactDOM.unmountComponentAtNode(section);
+describe('Not-Found container', () => {
+  it('renders without crashing', () => {
+    const NotFoundContainer = shallow(<NotFound />);
+    expect(NotFoundContainer.find('h2').text()).toEqual('Page not found');
+    expect(NotFoundContainer.find('h1').text()).toEqual('404');
+  });
 });
