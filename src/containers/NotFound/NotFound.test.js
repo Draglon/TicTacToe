@@ -3,10 +3,15 @@ import { shallow } from 'enzyme';
 
 import NotFound from './index';
 
-describe('Not-Found container', () => {
+describe('<NotFound /> container', () => {
+  const NotFoundContainer = shallow(<NotFound />);
+
   it('renders without crashing', () => {
-    const NotFoundContainer = shallow(<NotFound />);
     expect(NotFoundContainer.find('h2').text()).toEqual('Page not found');
     expect(NotFoundContainer.find('h1').text()).toEqual('404');
+  });
+
+  it('render property', () => {
+    expect(NotFoundContainer).toMatchSnapshot();
   });
 });
