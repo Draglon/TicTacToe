@@ -12,7 +12,7 @@ import {
 
 // Tic Tac Toe - InitState
 const emptyArea = [...Array(9).keys()].map(() => '');
-const ticTacToeInitState = {
+export const ticTacToeInitState = {
   currentPlayer: 1,
   currentStep: 0,
   currentArea: emptyArea,
@@ -25,7 +25,7 @@ const ticTacToeInitState = {
 };
 
 // Tic Tac Toe - reducer
-const ticTacToeReducer = (state = ticTacToeInitState, action) => {
+export const ticTacToeReducer = (state = ticTacToeInitState, action) => {
   switch (action.type) {
     case CURRENT_PLAYER:
       return {
